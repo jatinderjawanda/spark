@@ -1,0 +1,19 @@
+#Docker build command for dependency docker
+
+#example
+#docker build -t artifacts.ggn.in.guavus.com:4246/spark-py-opsiq:3.0.0-hadoop3.2-1.0 spark
+docker build -t artifacts.ggn.in.guavus.com:4246/<name>:<version> spark
+
+#example
+#sudo docker push artifacts.ggn.in.guavus.com:4246/spark-py-opsiq:3.0.0-hadoop3.2-1.0
+sudo docker push artifacts.ggn.in.guavus.com:4246/<name>:<version>
+
+
+
+
+#Docker build command for spark Docker
+
+
+./bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4246 -t 3.0.0-hadoop3.2-1.0 build
+
+./bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4246 -t 3.0.0-hadoop3.2-1.0 -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile build
