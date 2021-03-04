@@ -25,6 +25,10 @@ RUN apt-get update && \
     curl -fSL https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.0.0/spark-streaming-kafka-0-10_2.12-3.0.0.jar -o spark-streaming-kafka-0-10_2.12-3.0.0.jar && \
     curl -fSL https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.13.0/jmx_prometheus_javaagent-0.13.0.jar -o jmx_prometheus_javaagent-0.13.0.jar && \
     curl -fSL https://repo1.maven.org/maven2/za/co/absa/abris_2.12/4.0.1/abris_2.12-4.0.1.jar -o abris_2.12-4.0.1.jar && \
+    curl -fSL https://packages.confluent.io/maven/io/confluent/kafka-avro-serializer/5.3.4/kafka-avro-serializer-5.3.4.jar -o kafka-avro-serializer-5.3.4.jar && \
+    curl -fSL https://packages.confluent.io/maven/io/confluent/kafka-schema-registry-client/5.3.4/kafka-schema-registry-client-5.3.4.jar -o kafka-schema-registry-client-5.3.4.jar && \
+    curl -fSL https://packages.confluent.io/maven/io/confluent/common-config/5.3.4/common-config-5.3.4.jar -o common-config-5.3.4.jar && \
+    curl -fSL https://packages.confluent.io/maven/io/confluent/common-utils/5.4.3/common-utils-5.4.3.jar -o common-utils-5.4.3.jar && \
     mv elasticsearch-hadoop-core-7.8.1_3.0.0.jar /opt/spark/jars/ && \
     mv elasticsearch-hadoop-mr-7.8.1_3.0.0.jar /opt/spark/jars/ && \
     mv elasticsearch-hadoop-sql-7.8.1_3.0.0.jar /opt/spark/jars/ && \
@@ -41,7 +45,11 @@ RUN apt-get update && \
     mv kafka-clients-2.2.0.jar /opt/spark/jars/ && \
     mv spark-streaming-kafka-0-10_2.12-3.0.0.jar /opt/spark/jars/ && \
     mv jmx_prometheus_javaagent-0.13.0.jar /opt/spark/jars/ && \
-    mv abris_2.12-4.0.1.jar /opt/spark/jars/
+    mv abris_2.12-4.0.1.jar /opt/spark/jars/ && \
+    mv kafka-avro-serializer-5.3.4.jar /opt/spark/jars/ && \
+    mv kafka-schema-registry-client-5.3.4.jar /opt/spark/jars/ && \
+    mv common-config-5.3.4.jar /opt/spark/jars/ && \
+    mv common-utils-5.4.3.jar /opt/spark/jars/
 
 
 
