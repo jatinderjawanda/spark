@@ -41,12 +41,12 @@ RUN apt-get update -y && \
     mv kafka-clients-2.2.0.jar /opt/spark/jars/ && \
     mv spark-streaming-kafka-0-10_2.12-3.0.0.jar /opt/spark/jars/ && \
     mv jmx_prometheus_javaagent-0.13.0.jar /opt/spark/jars/ && \
-    ADD ./gnutls-3.7.1 /tmp/gnutls-3.7.1 && \
-    WORKDIR /tmp/gnutls-3.7.1 && \
-    ./configure --prefix=/usr --docdir=/usr/share/doc/gnutls-3.7.1 --disable-guile --disable-rpath --with-default-trust-store-pkcs11="pkcs11:" && \
+
+COPY gnutls-3.7.1 /tmp/gnutls-3.7.1
+WORKDIR /tmp/gnutls-3.7.1 && \
+RUN ./configure --prefix=/usr --docdir=/usr/share/doc/gnutls-3.7.1 --disable-guile --disable-rpath --with-default-trust-store-pkcs11="pkcs11:" && \
     make && \
     make install
-
 
 
 ENTRYPOINT [ "/opt/entrypoint.sh" ]
