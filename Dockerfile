@@ -9,11 +9,6 @@ USER root
 RUN apt-get update -y && \
     apt-get install -y libzstd-dev && \
     apt-get -y install curl && \
-    curl -fSL https://www.gnupg.org/ftp/gcrypt/gnutls/v3.7/gnutls-3.7.1.tar.xz -o gnutls-3.7.1.tar.xz && \
-    tar -xvf gnutls-3.7.1.tar.xz && \
-    ./configure --prefix=/usr --docdir=/usr/share/doc/gnutls-3.7.1 --disable-guile --disable-rpath --with-default-trust-store-pkcs11="pkcs11:" && \
-    make && \
-    make install && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-core/7.8.1_3.0.0/elasticsearch-hadoop-core-7.8.1_3.0.0.jar -o elasticsearch-hadoop-core-7.8.1_3.0.0.jar && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-mr/7.8.1_3.0.0/elasticsearch-hadoop-mr-7.8.1_3.0.0.jar -o elasticsearch-hadoop-mr-7.8.1_3.0.0.jar && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-sql/7.8.1_3.0.0/elasticsearch-hadoop-sql-7.8.1_3.0.0.jar -o elasticsearch-hadoop-sql-7.8.1_3.0.0.jar && \
@@ -45,7 +40,12 @@ RUN apt-get update -y && \
     mv spark-sql-kafka-0-10_2.12-3.0.0.jar /opt/spark/jars/ && \
     mv kafka-clients-2.2.0.jar /opt/spark/jars/ && \
     mv spark-streaming-kafka-0-10_2.12-3.0.0.jar /opt/spark/jars/ && \
-    mv jmx_prometheus_javaagent-0.13.0.jar /opt/spark/jars/
+    mv jmx_prometheus_javaagent-0.13.0.jar /opt/spark/jars/ && \
+    COPY ./gnutls-3.7.1 /tmp/gnutls-3.7.1 && \
+    WORKDIR /tmp/gnutls-3.7.1 && \
+    ./configure --prefix=/usr --docdir=/usr/share/doc/gnutls-3.7.1 --disable-guile --disable-rpath --with-default-trust-store-pkcs11="pkcs11:" && \
+    make && \
+    make install
 
 
 
