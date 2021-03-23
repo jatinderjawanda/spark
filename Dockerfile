@@ -10,7 +10,7 @@ RUN apt-get update -y && \
     apt-get install -y libzstd-dev && \
     apt-get -y install curl && \
     curl -fSL https://www.gnupg.org/ftp/gcrypt/gnutls/v3.7/gnutls-3.7.1.tar.xz -o gnutls-3.7.1.tar.xz && \
-    tar -zxvf gnutls-3.7.1.tar.xz && \
+    tar -xvf gnutls-3.7.1.tar.xz && \
     ./configure --prefix=/usr --docdir=/usr/share/doc/gnutls-3.7.1 --disable-guile --disable-rpath --with-default-trust-store-pkcs11="pkcs11:" && \
     make && \
     make install && \
