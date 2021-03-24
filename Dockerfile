@@ -6,11 +6,7 @@ ARG spark_uid=185
 
 USER root
 
-RUN apt-get update -y && \
-    apt-get install -y libzstd-dev && \
-    apt-get install -y libgnutls30 && \
-    apt-get -y install curl && \
-    curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-core/7.8.1_3.0.0/elasticsearch-hadoop-core-7.8.1_3.0.0.jar -o elasticsearch-hadoop-core-7.8.1_3.0.0.jar && \
+RUN curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-core/7.8.1_3.0.0/elasticsearch-hadoop-core-7.8.1_3.0.0.jar -o elasticsearch-hadoop-core-7.8.1_3.0.0.jar && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-mr/7.8.1_3.0.0/elasticsearch-hadoop-mr-7.8.1_3.0.0.jar -o elasticsearch-hadoop-mr-7.8.1_3.0.0.jar && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-sql/7.8.1_3.0.0/elasticsearch-hadoop-sql-7.8.1_3.0.0.jar -o elasticsearch-hadoop-sql-7.8.1_3.0.0.jar && \
     curl -fSL https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/1.11.832/aws-java-sdk-s3-1.11.832.jar -o aws-java-sdk-s3-1.11.832.jar && \
