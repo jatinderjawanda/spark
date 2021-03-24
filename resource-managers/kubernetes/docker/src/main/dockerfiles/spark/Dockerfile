@@ -27,6 +27,8 @@ ARG spark_uid=185
 # of the Spark distribution. E.g.:
 # docker build -t spark:latest -f kubernetes/dockerfiles/spark/Dockerfile .
 
+USER root
+
 RUN set -ex && \
     ln -s /lib /lib64 && \
     yum install bash tini libc6 libpam-modules krb5-user libnss3 && \
