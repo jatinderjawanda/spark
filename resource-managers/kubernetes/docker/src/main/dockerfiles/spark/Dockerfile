@@ -31,7 +31,6 @@ USER root
 
 RUN set -ex && \
     ln -s /lib /lib64 && \
-    yum install bash tini libc6 libpam-modules krb5-user libnss3 && \
     mkdir -p /opt/spark && \
     mkdir -p /opt/spark/examples && \
     mkdir -p /opt/spark/work-dir && \
