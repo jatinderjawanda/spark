@@ -28,7 +28,6 @@ ARG spark_uid=185
 # docker build -t spark:latest -f kubernetes/dockerfiles/spark/Dockerfile .
 
 RUN set -ex && \
-    apt-get update && \
     ln -s /lib /lib64 && \
     yum install bash tini libc6 libpam-modules krb5-user libnss3 && \
     mkdir -p /opt/spark && \
