@@ -16,7 +16,7 @@
 #
 ARG java_image_tag=11-jre-slim
 
-FROM artifacts.ggn.in.guavus.com:4244/openjdk:${java_image_tag}
+FROM registry.access.redhat.com/ubi8/openjdk-8
 
 ARG spark_uid=185
 
@@ -30,7 +30,7 @@ ARG spark_uid=185
 RUN set -ex && \
     apt-get update && \
     ln -s /lib /lib64 && \
-    apt install -y bash tini libc6 libpam-modules krb5-user libnss3 && \
+    yum install bash tini libc6 libpam-modules krb5-user libnss3 && \
     mkdir -p /opt/spark && \
     mkdir -p /opt/spark/examples && \
     mkdir -p /opt/spark/work-dir && \
