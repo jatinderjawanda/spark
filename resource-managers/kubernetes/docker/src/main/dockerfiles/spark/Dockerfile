@@ -16,7 +16,7 @@
 #
 ARG java_image_tag=11-jre-slim
 
-FROM registry.access.redhat.com/ubi8/openjdk-8
+FROM registry.access.redhat.com/ubi8/openjdk-8:1.3
 
 ARG spark_uid=185
 
