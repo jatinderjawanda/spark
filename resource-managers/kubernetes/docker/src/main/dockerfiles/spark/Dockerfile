@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 ARG java_image_tag=14-jdk
 
 FROM artifacts.ggn.in.guavus.com:4244/openjdk:${java_image_tag}
