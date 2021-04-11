@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-ARG java_image_tag=11-jre-slim
+ARG java_image_tag=14-jdk
 
-FROM registry.access.redhat.com/ubi8/openjdk-8:1.3
+FROM artifacts.ggn.in.guavus.com:4244/openjdk:${java_image_tag}
 
 ARG spark_uid=185
 
