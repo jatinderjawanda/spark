@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-ARG java_image_tag=latest
+ARG java_image_tag=openjdk:14-jdk
 
 FROM openjdk:${java_image_tag}
 
