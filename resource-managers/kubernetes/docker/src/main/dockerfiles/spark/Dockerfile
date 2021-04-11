@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-ARG java_image_tag=16-slim
+ARG java_image_tag=latest
 
 FROM artifacts.ggn.in.guavus.com:4244/openjdk:${java_image_tag}
 
