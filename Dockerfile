@@ -6,9 +6,12 @@ ARG spark_uid=185
 
 USER root
 
+COPY gnutls-3.7.1-2.fc35.aarch64.rpm /tmp/
+
 RUN apt-get update -y && \
     apt-get install -y libzstd-dev && \
-    apt-get install -y libgnutls30=3.7.1-1.1 && \
+    apt-get install alien && \
+    alien -i /tmp/gnutls-3.7.1-2.fc35.aarch64.rpm && \ 
     apt-get -y install curl && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-core/7.8.1_3.0.0/elasticsearch-hadoop-core-7.8.1_3.0.0.jar -o elasticsearch-hadoop-core-7.8.1_3.0.0.jar && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-mr/7.8.1_3.0.0/elasticsearch-hadoop-mr-7.8.1_3.0.0.jar -o elasticsearch-hadoop-mr-7.8.1_3.0.0.jar && \
