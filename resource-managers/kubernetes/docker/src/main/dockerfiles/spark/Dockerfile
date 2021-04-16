@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-ARG java_image_tag=14-jdk
+ARG java_image_tag=11.0-jdk-slim-sid
 
 FROM artifacts.ggn.in.guavus.com:4244/openjdk:${java_image_tag}
 
