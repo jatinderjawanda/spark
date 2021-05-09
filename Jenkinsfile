@@ -87,7 +87,7 @@ pipeline
                                     sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./resource-managers/kubernetes/docker/src/main/dockerfiles/spark/bindings/python/Dockerfile build"
                                     sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./resource-managers/kubernetes/docker/src/main/dockerfiles/spark/bindings/python/Dockerfile push"
                                     sh "docker build -t ${DOCKER_IMAGE_NAME} --build-arg GIT_HEAD=${longCommit} --build-arg GIT_BRANCH=${env.BRANCH_NAME} --build-arg VERSION=${dockerTag} --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} ."
-                                    sh "docker build -t ${PYSPARK_DOCKER_IMAGE_NAME} --build-arg GIT_HEAD=${longCommit} --build-arg GIT_BRANCH=${env.BRANCH_NAME} --build-arg VERSION=${dockerTag} --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} ."
+                                    sh "docker build -f PysparkDockerfile -t ${PYSPARK_DOCKER_IMAGE_NAME} --build-arg GIT_HEAD=${longCommit} --build-arg GIT_BRANCH=${env.BRANCH_NAME} --build-arg VERSION=${dockerTag} --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} ."
                                 }
                             }
                         }
