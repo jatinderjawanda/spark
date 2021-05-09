@@ -289,7 +289,7 @@ fi
 REPO=
 TAG=
 BASEDOCKERFILE=
-PYDOCKERFILE=
+PYDOCKERFILE="kubernetes/dockerfiles/spark/bindings/python/Dockerfile"
 RDOCKERFILE=
 NOCACHEARG=
 BUILD_PARAMS=
