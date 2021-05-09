@@ -84,8 +84,8 @@ pipeline
                                     sh "./dev/make-distribution.sh --name guavus_spark-${GUAVUS_SPARK_VERSION}-3.2.0 -Phive -Phive-thriftserver -Pkubernetes -Phadoop-3.2 -Dhadoop.version=3.2.0"
                                     sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} build"
                                     sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} push"
-                                    sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile build"
-                                    sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile push"
+                                    sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./resource-managers/kubernetes/docker/src/main/dockerfiles/spark/bindings/python/Dockerfile build"
+                                    sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./resource-managers/kubernetes/docker/src/main/dockerfiles/spark/bindings/python/Dockerfile push"
                                     sh "docker build -t ${DOCKER_IMAGE_NAME} --build-arg GIT_HEAD=${longCommit} --build-arg GIT_BRANCH=${env.BRANCH_NAME} --build-arg VERSION=${dockerTag} --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} ."
                                     sh "docker build -t ${PYSPARK_DOCKER_IMAGE_NAME} --build-arg GIT_HEAD=${longCommit} --build-arg GIT_BRANCH=${env.BRANCH_NAME} --build-arg VERSION=${dockerTag} --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} ."
                                 }
