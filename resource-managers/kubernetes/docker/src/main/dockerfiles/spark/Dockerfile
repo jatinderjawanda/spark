@@ -16,7 +16,8 @@
 #
 ARG java_image_tag=openjdk:8-jre-slim
 
-FROM openjdk:${java_image_tag}
+#FROM openjdk:${java_image_tag}
+FROM openjdk:8-jre-slim
 
 ARG spark_uid=185
 

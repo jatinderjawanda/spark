@@ -44,6 +44,7 @@ pipeline
                     PUSH_JAR = false;
                     PUSH_DOCKER = false;
                     DOCKER_IMAGE_NAME = "spark-opsiq";
+                    PYSPARK_DOCKER_IMAGE_NAME = "spark-py-opsiq";
                     longCommit = sh(returnStdout: true, script: "git rev-parse HEAD").trim()
 
                     if( env.buildType in ['release'] )
@@ -86,6 +87,7 @@ pipeline
                                     sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile build"
                                     sh "./dist/bin/docker-image-tool.sh -r artifacts.ggn.in.guavus.com:4244 -t ${GUAVUS_SPARK_VERSION}-hadoop3.2-${GUAVUS_DOCKER_VERSION} -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile push"
                                     sh "docker build -t ${DOCKER_IMAGE_NAME} --build-arg GIT_HEAD=${longCommit} --build-arg GIT_BRANCH=${env.BRANCH_NAME} --build-arg VERSION=${dockerTag} --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} ."
+                                    sh "docker build -t ${PYSPARK_DOCKER_IMAGE_NAME} --build-arg GIT_HEAD=${longCommit} --build-arg GIT_BRANCH=${env.BRANCH_NAME} --build-arg VERSION=${dockerTag} --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} ."
                                 }
                             }
                         }
@@ -95,6 +97,7 @@ pipeline
                                 script {
                                     echo "Docker PUSH..."
                                     docker_push( buildType, DOCKER_IMAGE_NAME )
+                                    docker_push( buildType, PYSPARK_DOCKER_IMAGE_NAME )
                                 }
                             }
                         }
