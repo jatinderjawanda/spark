@@ -11,11 +11,10 @@ RUN apt-get update -y && \
     apt-get install -y bind9-host && \
     apt-get install -y libbind9-161 && \
     apt-get install -y libc-bin && \
-    apt-get install -y libc6=2.34 -V && \
+    apt-get install -y libc6 && \
     apt-get install -y libdns1104 && \
     apt-get install -y libisc1100 && \
     apt-get install -y libisccc161 && \
-    apt-get install -y libc-bin && \
     apt-get install -y liblz4-1 && \
     apt-get install -y libnss3 && \
     apt-get -y install curl && \
