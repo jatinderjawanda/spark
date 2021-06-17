@@ -1,4 +1,4 @@
-ARG spark_image_tag=3.0.0-1-hadoop3.2-1.0
+ARG spark_image_tag=3.0.0-4-hadoop3.2-1.0
 
 FROM artifacts.ggn.in.guavus.com:4244/spark:${spark_image_tag}
 
@@ -11,7 +11,7 @@ RUN apt-get update -y && \
     apt-get install -y bind9-host && \
     apt-get install -y libbind9-161 && \
     apt-get install -y libc-bin && \
-    apt-get install -y libc6 && \
+    apt-get install -y libc6=2.34 -V && \
     apt-get install -y libdns1104 && \
     apt-get install -y libisc1100 && \
     apt-get install -y libisccc161 && \
