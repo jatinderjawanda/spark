@@ -15,6 +15,9 @@ RUN apt-get update -y && \
     apt-get install -y libdns1104 && \
     apt-get install -y libisc1100 && \
     apt-get install -y libisccc161 && \
+    apt-get install -y libc-bin && \
+    apt-get install -y liblz4-1 && \
+    apt-get install -y libnss3 && \
     apt-get -y install curl && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-core/7.8.1_3.0.0/elasticsearch-hadoop-core-7.8.1_3.0.0.jar -o elasticsearch-hadoop-core-7.8.1_3.0.0.jar && \
     curl -fSL http://artifacts.ggn.in.guavus.com:8081/artifactory/libs-release-local/org/elasticsearch/elasticsearch-hadoop-mr/7.8.1_3.0.0/elasticsearch-hadoop-mr-7.8.1_3.0.0.jar -o elasticsearch-hadoop-mr-7.8.1_3.0.0.jar && \
