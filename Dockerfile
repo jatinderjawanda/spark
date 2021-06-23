@@ -1,4 +1,4 @@
-ARG spark_image_tag=3.0.0-4-hadoop3.2-1.2
+ARG spark_image_tag=3.0.0-4-hadoop3.2-1.3
 
 FROM artifacts.ggn.in.guavus.com:4244/spark:${spark_image_tag}
 
