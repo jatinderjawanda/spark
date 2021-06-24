@@ -39,7 +39,19 @@ RUN apt-get update -y && \
     mv spark-sql-kafka-0-10_2.12-3.0.0.jar /opt/spark/jars/ && \
     mv kafka-clients-2.2.0.jar /opt/spark/jars/ && \
     mv spark-streaming-kafka-0-10_2.12-3.0.0.jar /opt/spark/jars/ && \
-    mv jmx_prometheus_javaagent-0.13.0.jar /opt/spark/jars/
+    mv jmx_prometheus_javaagent-0.13.0.jar /opt/spark/jars/ && \
+    rm -rf /opt/spark/jars/htrace-core4-4.1.0-incubating.jar && \
+    curl -fSL https://repo1.maven.org/maven2/org/apache/htrace/htrace-core4/4.2.0-incubating/htrace-core4-4.2.0-incubating.jar -o htrace-core4-4.2.0-incubating.jar && \
+    mv htrace-core4-4.2.0-incubating.jar /opt/spark/jars/ && \
+    rm -rf /opt/spark/jars/json-smart-2.3.jar && \
+    curl -fSL https://repo1.maven.org/maven2/net/minidev/json-smart/2.4.1/json-smart-2.4.1.jar -o json-smart-2.3.jar && \
+    mv json-smart-2.3.jar /opt/spark/jars/ && \
+    rm -rf /opt/spark/jars/log4j-1.2.17.jar && \
+    curl -fSL https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.8.2/log4j-core-2.8.2.jar -o log4j-core-2.8.2.jar && \
+    mv log4j-core-2.8.2.jar /opt/spark/jars/ && \
+    rm -rf /opt/spark/jars/nimbus-jose-jwt-4.41.1.jar && \
+    curl -fSL https://repo1.maven.org/maven2/com/nimbusds/nimbus-jose-jwt/7.9/nimbus-jose-jwt-7.9.jar -o nimbus-jose-jwt-7.9.jar && \
+    mv nimbus-jose-jwt-7.9.jar /opt/spark/jars/
 
 
 
