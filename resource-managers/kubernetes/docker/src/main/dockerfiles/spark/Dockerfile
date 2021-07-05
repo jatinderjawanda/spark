@@ -17,7 +17,7 @@
 ARG java_image_tag=openjdk:8-jre-slim
 
 #FROM openjdk:${java_image_tag}
-FROM adoptopenjdk:8u282-b08-jre-openj9-0.24.0
+FROM artifacts.ggn.in.guavus.com:4244/adoptopenjdk:8u282-b08-jre-openj9-0.24.0
 
 ARG spark_uid=185
 
