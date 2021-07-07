@@ -51,7 +51,12 @@ RUN apt-get update -y && \
     curl -fSL https://repo1.maven.org/maven2/com/nimbusds/nimbus-jose-jwt/7.9/nimbus-jose-jwt-7.9.jar -o nimbus-jose-jwt-7.9.jar && \
     mv nimbus-jose-jwt-7.9.jar /opt/spark/jars/ && \
     curl -fSL https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-1.2-api/2.14.1/log4j-1.2-api-2.14.1.jar -o log4j-1.2-api-2.14.1.jar && \
-    mv log4j-1.2-api-2.14.1.jar /opt/spark/jars/
+    mv log4j-1.2-api-2.14.1.jar /opt/spark/jars/ && \
+    curl -fSL https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.14.1/log4j-core-2.14.1.jar -o log4j-core-2.14.1.jar && \
+    mv log4j-core-2.14.1.jar /opt/spark/jars/ && \
+    curl -fSL https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.14.1/log4j-api-2.14.1.jar -o log4j-api-2.14.1.jar && \
+    mv log4j-api-2.14.1.jar /opt/spark/jars/
+    
 
 
 
