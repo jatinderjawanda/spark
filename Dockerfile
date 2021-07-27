@@ -41,6 +41,7 @@ RUN apt-get update -y && \
     mv spark-streaming-kafka-0-10_2.12-3.0.0.jar /opt/spark/jars/ && \
     mv jmx_prometheus_javaagent-0.13.0.jar /opt/spark/jars/ && \
     rm -rf /opt/spark/jars/htrace-core4-4.1.0-incubating.jar && \
+    rm -rf /opt/spark/jars/log4j-1.2.17.jar && \
     rm -rf /opt/spark/jars/json-smart-2.3.jar && \
     curl -fSL https://repo1.maven.org/maven2/net/minidev/json-smart/2.4.1/json-smart-2.4.1.jar -o json-smart-2.3.jar && \
     mv json-smart-2.3.jar /opt/spark/jars/ && \
