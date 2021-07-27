@@ -48,7 +48,7 @@ RUN apt-get update -y && \
     mv log4j-core-2.8.2.jar /opt/spark/jars/ && \
     rm -rf /opt/spark/jars/nimbus-jose-jwt-4.41.1.jar && \
     curl -fSL https://repo1.maven.org/maven2/com/nimbusds/nimbus-jose-jwt/7.9/nimbus-jose-jwt-7.9.jar -o nimbus-jose-jwt-7.9.jar && \
-    mv nimbus-jose-jwt-7.9.jar /opt/spark/jars/ && \
+    mv nimbus-jose-jwt-7.9.jar /opt/spark/jars/
 
 
 
