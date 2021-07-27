@@ -44,9 +44,6 @@ RUN apt-get update -y && \
     rm -rf /opt/spark/jars/json-smart-2.3.jar && \
     curl -fSL https://repo1.maven.org/maven2/net/minidev/json-smart/2.4.1/json-smart-2.4.1.jar -o json-smart-2.3.jar && \
     mv json-smart-2.3.jar /opt/spark/jars/ && \
-    rm -rf /opt/spark/jars/log4j-1.2.17.jar && \
-    curl -fSL https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.8.2/log4j-core-2.8.2.jar -o log4j-core-2.8.2.jar && \
-    mv log4j-core-2.8.2.jar /opt/spark/jars/ && \
     rm -rf /opt/spark/jars/nimbus-jose-jwt-4.41.1.jar && \
     curl -fSL https://repo1.maven.org/maven2/com/nimbusds/nimbus-jose-jwt/7.9/nimbus-jose-jwt-7.9.jar -o nimbus-jose-jwt-7.9.jar && \
     mv nimbus-jose-jwt-7.9.jar /opt/spark/jars/
