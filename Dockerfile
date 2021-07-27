@@ -51,6 +51,9 @@ RUN apt-get update -y && \
 
 
 COPY htrace-core4-4.3.0-incubating-SNAPSHOT.jar /opt/spark/jars/
+COPY log4j-api-2.14.1.jar /opt/spark/jars/
+COPY log4j-1.2-api-2.14.1.jar /opt/spark/jars/
+COPY log4j-core-2.14.1.jar /opt/spark/jars/
 
 
 ENTRYPOINT [ "/opt/entrypoint.sh" ]
