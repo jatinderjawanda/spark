@@ -35,6 +35,9 @@ pipeline
                 echo "GUAVUS_SPARK_VERSION : ${GUAVUS_SPARK_VERSION}"
                 echo "GUAVUS_DOCKER_VERSION : ${GUAVUS_DOCKER_VERSION}"
                 sh 'mvn versions:set -DnewVersion=${GUAVUS_SPARK_VERSION}'
+                sh 'mvn install:install-file -Dfile=log4j-api-2.14.1.jar -DgroupId=log4j -DartifactId=log4j -Dversion=2.14.1 -Dpackaging=jar'
+                sh 'mvn install:install-file -Dfile=log4j-1.2-api-2.14.1.jar -DgroupId=log4j -DartifactId=log4j -Dversion=2.14.1 -Dpackaging=jar'
+                sh 'mvn install:install-file -Dfile=log4j-core-2.14.1.jar -DgroupId=log4j -DartifactId=log4j -Dversion=2.14.1 -Dpackaging=jar'
             }
         }
 

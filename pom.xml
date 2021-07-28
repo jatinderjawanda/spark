@@ -86,6 +86,9 @@
     <sbt.project.name>spark</sbt.project.name>
     <slf4j.version>1.7.30</slf4j.version>
     <log4j.version>2.12.2</log4j.version>
+    <log4j-1.2-api.version>2.14.1</log4j-1.2-api.version>
+    <log4j-api.version>2.14.1</log4j-api.version>
+    <log4j-core.version>2.14.1</log4j-core.version>
     <hadoop.version>2.7.4</hadoop.version>
     <protobuf.version>2.5.0</protobuf.version>
     <yarn.version>${hadoop.version}</yarn.version>
@@ -608,10 +611,28 @@
         <version>${slf4j.version}</version>
         <!-- runtime scope is appropriate, but causes SBT build problems -->
       </dependency>
-      <dependency>
+      <!--<dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
         <version>${log4j.version}</version>
+        <scope>${hadoop.deps.scope}</scope>
+      </dependency>-->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>${log4j-api.version}</version>
+        <scope>${hadoop.deps.scope}</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-1.2-api</artifactId>
+        <version>${log4j-1.2-api.version}</version>
+        <scope>${hadoop.deps.scope}</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>${log4j-core.version}</version>
         <scope>${hadoop.deps.scope}</scope>
       </dependency>
       <dependency>
