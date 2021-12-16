@@ -26,7 +26,7 @@ ARG spark_uid=185
 # distribution, the docker build command should be invoked from the top level directory
 # of the Spark distribution. E.g.:
 # docker build -t spark:latest -f kubernetes/dockerfiles/spark/Dockerfile .
-
+ENV DEBIAN_FRONTEND=noninteractive
 RUN set -ex && \
     apt-get update && \
     ln -s /lib /lib64 && \
